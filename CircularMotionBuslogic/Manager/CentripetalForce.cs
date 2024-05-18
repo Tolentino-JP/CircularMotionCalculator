@@ -13,9 +13,17 @@ namespace CircularMotionBuslogic.Manager
 
 
         // computing centripetal force
-        public void CentripetalForceCompute(Values _values)
+        public double CentripetalForceCompute(Values _values)
         {
 
+            double answer = (_values.mass * Math.Pow(_values.tangentialVelocity, 2) ) / _values.radius;
+
+            return answer;
+        }
+
+        public void Ewan()
+        {
+            Console.WriteLine("Main Conneted Wow Pakyu melan");
         }
 
     }
