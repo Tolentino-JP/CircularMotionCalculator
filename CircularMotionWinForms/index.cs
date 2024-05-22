@@ -26,7 +26,17 @@ namespace CircularMotionWinForms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (tangentialInput.Text == "")
+            {
 
+                if (angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)
+                {
+
+                    tangentialInput.Text = (double.Parse(angularInput.Text) * double.Parse(radiusInput.Text)).ToString();
+
+                }
+
+            }
         }
 
         private void massInput_KeyPress(object sender, KeyPressEventArgs e)
@@ -102,6 +112,31 @@ namespace CircularMotionWinForms
                 {
                     e.Handled = true;
                 }
+            }
+        }
+
+        private void massInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tangentialInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radiusInput_TextChanged(object sender, EventArgs e)
+        {
+            if (tangentialInput.Text == "")
+            {
+
+                if (angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)
+                {
+
+                    tangentialInput.Text = (double.Parse(angularInput.Text) * double.Parse(radiusInput.Text)).ToString();
+
+                }
+
             }
         }
     }
