@@ -69,7 +69,7 @@
             tangentialInput.Size = new Size(160, 23);
             tangentialInput.TabIndex = 1;
             tangentialInput.TextChanged += tangentialInput_TextChanged;
-            tangentialInput.KeyPress += velocityInput_KeyPress;
+            tangentialInput.KeyPress += tangentialInput_KeyPress;
             // 
             // massInput
             // 
@@ -126,8 +126,8 @@
             angularInput.Name = "angularInput";
             angularInput.Size = new Size(160, 23);
             angularInput.TabIndex = 8;
-            angularInput.TextChanged += textBox1_TextChanged;
-            angularInput.KeyPress += textBox1_KeyPress;
+            angularInput.TextChanged += angularInput_TextChanged;
+            angularInput.KeyPress += angularInput_KeyPress;
             // 
             // label4
             // 
@@ -190,6 +190,8 @@
             centripetalInput.Name = "centripetalInput";
             centripetalInput.Size = new Size(160, 23);
             centripetalInput.TabIndex = 14;
+            centripetalInput.TextChanged += centripetalInput_TextChanged;
+            centripetalInput.KeyPress += centripetalInput_KeyPress;
             // 
             // label10
             // 
@@ -225,6 +227,8 @@
             velocityInput.Name = "velocityInput";
             velocityInput.Size = new Size(160, 23);
             velocityInput.TabIndex = 19;
+            velocityInput.TextChanged += velocityInput_TextChanged;
+            velocityInput.KeyPress += velocityInput_KeyPress;
             // 
             // label13
             // 
@@ -242,6 +246,8 @@
             accelerationInput.Name = "accelerationInput";
             accelerationInput.Size = new Size(160, 23);
             accelerationInput.TabIndex = 17;
+            accelerationInput.TextChanged += accelerationInput_TextChanged;
+            accelerationInput.KeyPress += accelerationInput_KeyPress;
             // 
             // label14
             // 
