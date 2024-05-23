@@ -18,6 +18,13 @@ namespace CircularMotionWinForms
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            massInput.Text = "";
+            radiusInput.Text = "";
+            tangentialInput.Text = "";
+            angularInput.Text = "";
+            centripetalInput.Text = "";
+            velocityInput.Text = "";
+            accelerationInput.Text = "";
 
         }
 
@@ -76,7 +83,7 @@ namespace CircularMotionWinForms
                 double _cf = double.Parse(centripetalInput.Text);
                 double _r = double.Parse(radiusInput.Text);
                 double _tv = double.Parse(tangentialInput.Text);
-                massInput.Text = ((_cf * _r) / Math.Pow(_tv, 2)).ToString();
+                massInput.Text = (Math.Round( ((_cf * _r) / Math.Pow(_tv, 2)), 2)).ToString();
             }
             else
             {
@@ -91,7 +98,7 @@ namespace CircularMotionWinForms
                 double _r = double.Parse(radiusInput.Text);
                 double _tv = double.Parse(tangentialInput.Text);
 
-                accelerationInput.Text = (Math.Pow(_tv, 2) / _r).ToString();
+                accelerationInput.Text = (Math.Round((Math.Pow(_tv, 2) / _r), 2)).ToString();
             }
             else
             {
@@ -103,7 +110,7 @@ namespace CircularMotionWinForms
         {
             if (angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)
             {
-                tangentialInput.Text = (double.Parse(angularInput.Text) * double.Parse(radiusInput.Text)).ToString();
+                tangentialInput.Text = (Math.Round(double.Parse(angularInput.Text) * double.Parse(radiusInput.Text), 2)).ToString();
             }
             else
             {

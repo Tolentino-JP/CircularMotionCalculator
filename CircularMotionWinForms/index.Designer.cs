@@ -54,215 +54,259 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(63, 145);
+            label1.Location = new Point(225, 191);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(105, 15);
+            label1.Size = new Size(157, 25);
             label1.TabIndex = 0;
             label1.Text = "Tangential Velocity";
             // 
             // tangentialInput
             // 
-            tangentialInput.Location = new Point(64, 160);
+            tangentialInput.Anchor = AnchorStyles.None;
+            tangentialInput.Location = new Point(226, 216);
+            tangentialInput.Margin = new Padding(4, 5, 4, 5);
             tangentialInput.Multiline = true;
             tangentialInput.Name = "tangentialInput";
-            tangentialInput.Size = new Size(160, 23);
+            tangentialInput.Size = new Size(227, 36);
             tangentialInput.TabIndex = 1;
             tangentialInput.TextChanged += tangentialInput_TextChanged;
             tangentialInput.KeyPress += tangentialInput_KeyPress;
             // 
             // massInput
             // 
-            massInput.Location = new Point(63, 81);
+            massInput.Anchor = AnchorStyles.None;
+            massInput.Location = new Point(225, 84);
+            massInput.Margin = new Padding(4, 5, 4, 5);
             massInput.Multiline = true;
             massInput.Name = "massInput";
-            massInput.Size = new Size(160, 23);
+            massInput.Size = new Size(227, 36);
             massInput.TabIndex = 3;
             massInput.TextChanged += massInput_TextChanged;
             massInput.KeyPress += massInput_KeyPress;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(62, 66);
+            label2.Location = new Point(224, 59);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(34, 15);
+            label2.Size = new Size(53, 25);
             label2.TabIndex = 2;
             label2.Text = "Mass";
             // 
             // radiusInput
             // 
-            radiusInput.Location = new Point(63, 119);
+            radiusInput.Anchor = AnchorStyles.None;
+            radiusInput.Location = new Point(225, 147);
+            radiusInput.Margin = new Padding(4, 5, 4, 5);
             radiusInput.Multiline = true;
             radiusInput.Name = "radiusInput";
-            radiusInput.Size = new Size(160, 23);
+            radiusInput.Size = new Size(227, 36);
             radiusInput.TabIndex = 5;
             radiusInput.TextChanged += radiusInput_TextChanged;
             radiusInput.KeyPress += radiusInput_KeyPress;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(62, 104);
+            label3.Location = new Point(224, 122);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(42, 15);
+            label3.Size = new Size(65, 25);
             label3.TabIndex = 4;
             label3.Text = "Radius";
             // 
             // submitBtn
             // 
-            submitBtn.Location = new Point(150, 254);
+            submitBtn.Anchor = AnchorStyles.None;
+            submitBtn.Location = new Point(349, 372);
+            submitBtn.Margin = new Padding(4, 5, 4, 5);
             submitBtn.Name = "submitBtn";
-            submitBtn.Size = new Size(75, 23);
+            submitBtn.Size = new Size(107, 38);
             submitBtn.TabIndex = 6;
-            submitBtn.Text = "Submit";
+            submitBtn.Text = "Clear All";
             submitBtn.UseVisualStyleBackColor = true;
             submitBtn.Click += submitBtn_Click;
             // 
             // angularInput
             // 
-            angularInput.Location = new Point(64, 205);
+            angularInput.Anchor = AnchorStyles.None;
+            angularInput.Location = new Point(226, 291);
+            angularInput.Margin = new Padding(4, 5, 4, 5);
             angularInput.Multiline = true;
             angularInput.Name = "angularInput";
-            angularInput.Size = new Size(160, 23);
+            angularInput.Size = new Size(227, 36);
             angularInput.TabIndex = 8;
             angularInput.TextChanged += angularInput_TextChanged;
             angularInput.KeyPress += angularInput_KeyPress;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(63, 190);
+            label4.Location = new Point(225, 266);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(93, 15);
+            label4.Size = new Size(140, 25);
             label4.TabIndex = 7;
             label4.Text = "Angular Velocity";
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new Point(224, 84);
+            label5.Location = new Point(455, 89);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(28, 15);
+            label5.Size = new Size(42, 25);
             label5.TabIndex = 9;
             label5.Text = "(kg)";
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(224, 122);
+            label6.Location = new Point(455, 152);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(26, 15);
+            label6.Size = new Size(38, 25);
             label6.TabIndex = 10;
             label6.Text = "(m)";
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
-            label7.Location = new Point(224, 163);
+            label7.Location = new Point(455, 221);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(36, 15);
+            label7.Size = new Size(53, 25);
             label7.TabIndex = 11;
             label7.Text = "(m/s)";
             // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
-            label8.Location = new Point(224, 208);
+            label8.Location = new Point(455, 296);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(42, 15);
+            label8.Size = new Size(63, 25);
             label8.TabIndex = 12;
             label8.Text = "(rad/s)";
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
-            label9.Location = new Point(482, 84);
+            label9.Location = new Point(824, 89);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(24, 15);
+            label9.Size = new Size(35, 25);
             label9.TabIndex = 15;
             label9.Text = "(N)";
             // 
             // centripetalInput
             // 
-            centripetalInput.Location = new Point(321, 81);
+            centripetalInput.Anchor = AnchorStyles.None;
+            centripetalInput.Location = new Point(594, 84);
+            centripetalInput.Margin = new Padding(4, 5, 4, 5);
             centripetalInput.Multiline = true;
             centripetalInput.Name = "centripetalInput";
-            centripetalInput.Size = new Size(160, 23);
+            centripetalInput.Size = new Size(227, 36);
             centripetalInput.TabIndex = 14;
             centripetalInput.TextChanged += centripetalInput_TextChanged;
             centripetalInput.KeyPress += centripetalInput_KeyPress;
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
-            label10.Location = new Point(320, 66);
+            label10.Location = new Point(592, 59);
+            label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new Size(97, 15);
+            label10.Size = new Size(145, 25);
             label10.TabIndex = 13;
             label10.Text = "Centripetal Force";
             // 
             // label11
             // 
+            label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
-            label11.Location = new Point(481, 166);
+            label11.Location = new Point(822, 226);
+            label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(50, 15);
+            label11.Size = new Size(75, 25);
             label11.TabIndex = 21;
             label11.Text = "(m/s^2)";
             // 
             // label12
             // 
+            label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
-            label12.Location = new Point(482, 125);
+            label12.Location = new Point(824, 157);
+            label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new Size(36, 15);
+            label12.Size = new Size(53, 25);
             label12.TabIndex = 20;
             label12.Text = "(m/s)";
             // 
             // velocityInput
             // 
-            velocityInput.Location = new Point(321, 122);
+            velocityInput.Anchor = AnchorStyles.None;
+            velocityInput.Location = new Point(594, 152);
+            velocityInput.Margin = new Padding(4, 5, 4, 5);
             velocityInput.Multiline = true;
             velocityInput.Name = "velocityInput";
-            velocityInput.Size = new Size(160, 23);
+            velocityInput.Size = new Size(227, 36);
             velocityInput.TabIndex = 19;
             velocityInput.TextChanged += velocityInput_TextChanged;
             velocityInput.KeyPress += velocityInput_KeyPress;
             // 
             // label13
             // 
+            label13.Anchor = AnchorStyles.None;
             label13.AutoSize = true;
-            label13.Location = new Point(320, 107);
+            label13.Location = new Point(592, 127);
+            label13.Margin = new Padding(4, 0, 4, 0);
             label13.Name = "label13";
-            label13.Size = new Size(48, 15);
+            label13.Size = new Size(73, 25);
             label13.TabIndex = 18;
             label13.Text = "Velocity";
             // 
             // accelerationInput
             // 
-            accelerationInput.Location = new Point(321, 163);
+            accelerationInput.Anchor = AnchorStyles.None;
+            accelerationInput.Location = new Point(594, 221);
+            accelerationInput.Margin = new Padding(4, 5, 4, 5);
             accelerationInput.Multiline = true;
             accelerationInput.Name = "accelerationInput";
-            accelerationInput.Size = new Size(160, 23);
+            accelerationInput.Size = new Size(227, 36);
             accelerationInput.TabIndex = 17;
             accelerationInput.TextChanged += accelerationInput_TextChanged;
             accelerationInput.KeyPress += accelerationInput_KeyPress;
             // 
             // label14
             // 
+            label14.Anchor = AnchorStyles.None;
             label14.AutoSize = true;
-            label14.Location = new Point(320, 148);
+            label14.Location = new Point(592, 196);
+            label14.Margin = new Padding(4, 0, 4, 0);
             label14.Name = "label14";
-            label14.Size = new Size(73, 15);
+            label14.Size = new Size(108, 25);
             label14.TabIndex = 16;
             label14.Text = "Acceleration";
             // 
             // index
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1108, 568);
             Controls.Add(label11);
             Controls.Add(label12);
             Controls.Add(velocityInput);
@@ -285,6 +329,7 @@
             Controls.Add(label2);
             Controls.Add(tangentialInput);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "index";
             Text = "Index";
             WindowState = FormWindowState.Maximized;
