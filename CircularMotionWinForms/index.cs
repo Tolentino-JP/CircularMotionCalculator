@@ -96,7 +96,16 @@ namespace CircularMotionWinForms
 
         private void GetAcceleration()
         {
-            if (tangentialInput.Text.Length > 0 && radiusInput.Text.Length > 0)
+
+            if (centripetalInput.Text.Length > 0 && massInput.Text.Length > 0 && tangentialInput.Text.Length > 0)
+            {
+                double _cf = double.Parse(centripetalInput.Text);
+                double _mass = double.Parse(massInput.Text);
+                double _tv = double.Parse(tangentialInput.Text);
+
+                accelerationInput.Text = ( Math.Round( ( (_mass * Math.Pow(_tv, 2) ) / _cf ),2) ).ToString();
+            }
+            else if (tangentialInput.Text.Length > 0 && radiusInput.Text.Length > 0)
             {
                 double _r = double.Parse(radiusInput.Text);
                 double _tv = double.Parse(tangentialInput.Text);
