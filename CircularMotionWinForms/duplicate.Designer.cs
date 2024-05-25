@@ -1,6 +1,6 @@
 ﻿namespace CircularMotionWinForms
 {
-    partial class index
+    partial class duplicate
     {
         /// <summary>
         ///  Required designer variable.
@@ -41,16 +41,11 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            label9 = new Label();
-            centripetalInput = new TextBox();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            velocityInput = new TextBox();
-            label13 = new Label();
-            accelerationInput = new TextBox();
-            label14 = new Label();
             btnSubmit = new Button();
+            label10 = new Label();
+            centripetalInput = new TextBox();
+            label9 = new Label();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -201,16 +196,28 @@
             label8.TabIndex = 12;
             label8.Text = "(rad/s)";
             // 
-            // label9
+            // btnSubmit
             // 
-            label9.Anchor = AnchorStyles.None;
-            label9.AutoSize = true;
-            label9.Location = new Point(824, 89);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(35, 25);
-            label9.TabIndex = 15;
-            label9.Text = "(N)";
+            btnSubmit.Anchor = AnchorStyles.None;
+            btnSubmit.Location = new Point(234, 372);
+            btnSubmit.Margin = new Padding(4, 5, 4, 5);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(107, 38);
+            btnSubmit.TabIndex = 22;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Location = new Point(592, 59);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(145, 25);
+            label10.TabIndex = 13;
+            label10.Text = "Centripetal Force";
             // 
             // centripetalInput
             // 
@@ -224,109 +231,35 @@
             centripetalInput.TextChanged += centripetalInput_TextChanged;
             centripetalInput.KeyPress += centripetalInput_KeyPress;
             // 
-            // label10
+            // label9
             // 
-            label10.Anchor = AnchorStyles.None;
-            label10.AutoSize = true;
-            label10.Location = new Point(592, 59);
-            label10.Margin = new Padding(4, 0, 4, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(145, 25);
-            label10.TabIndex = 13;
-            label10.Text = "Centripetal Force";
+            label9.Anchor = AnchorStyles.None;
+            label9.AutoSize = true;
+            label9.Location = new Point(824, 89);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(35, 25);
+            label9.TabIndex = 15;
+            label9.Text = "(N)";
             // 
-            // label11
+            // comboBox1
             // 
-            label11.Anchor = AnchorStyles.None;
-            label11.AutoSize = true;
-            label11.Location = new Point(822, 226);
-            label11.Margin = new Padding(4, 0, 4, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(75, 25);
-            label11.TabIndex = 21;
-            label11.Text = "(m/s^2)";
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Centripetal Force", "Acceleration", "Linear Velocity" });
+            comboBox1.Location = new Point(592, 147);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(269, 33);
+            comboBox1.TabIndex = 23;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.None;
-            label12.AutoSize = true;
-            label12.Location = new Point(824, 157);
-            label12.Margin = new Padding(4, 0, 4, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(53, 25);
-            label12.TabIndex = 20;
-            label12.Text = "(m/s)";
-            // 
-            // velocityInput
-            // 
-            velocityInput.Anchor = AnchorStyles.None;
-            velocityInput.Location = new Point(594, 152);
-            velocityInput.Margin = new Padding(4, 5, 4, 5);
-            velocityInput.Multiline = true;
-            velocityInput.Name = "velocityInput";
-            velocityInput.Size = new Size(227, 36);
-            velocityInput.TabIndex = 19;
-            velocityInput.TextChanged += velocityInput_TextChanged;
-            velocityInput.KeyPress += velocityInput_KeyPress;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Location = new Point(592, 127);
-            label13.Margin = new Padding(4, 0, 4, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(73, 25);
-            label13.TabIndex = 18;
-            label13.Text = "Velocity";
-            // 
-            // accelerationInput
-            // 
-            accelerationInput.Anchor = AnchorStyles.None;
-            accelerationInput.Location = new Point(594, 221);
-            accelerationInput.Margin = new Padding(4, 5, 4, 5);
-            accelerationInput.Multiline = true;
-            accelerationInput.Name = "accelerationInput";
-            accelerationInput.Size = new Size(227, 36);
-            accelerationInput.TabIndex = 17;
-            accelerationInput.TextChanged += accelerationInput_TextChanged;
-            accelerationInput.KeyPress += accelerationInput_KeyPress;
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.None;
-            label14.AutoSize = true;
-            label14.Location = new Point(592, 196);
-            label14.Margin = new Padding(4, 0, 4, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(108, 25);
-            label14.TabIndex = 16;
-            label14.Text = "Acceleration";
-            // 
-            // btnSubmit
-            // 
-            btnSubmit.Anchor = AnchorStyles.None;
-            btnSubmit.Location = new Point(234, 372);
-            btnSubmit.Margin = new Padding(4, 5, 4, 5);
-            btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(107, 38);
-            btnSubmit.TabIndex = 22;
-            btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
-            btnSubmit.Click += btnSubmit_Click;
-            // 
-            // index
+            // duplicate
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1108, 568);
+            Controls.Add(comboBox1);
             Controls.Add(btnSubmit);
-            Controls.Add(label11);
-            Controls.Add(label12);
-            Controls.Add(velocityInput);
-            Controls.Add(label13);
-            Controls.Add(accelerationInput);
-            Controls.Add(label14);
             Controls.Add(label9);
             Controls.Add(centripetalInput);
             Controls.Add(label10);
@@ -344,7 +277,7 @@
             Controls.Add(tangentialInput);
             Controls.Add(label1);
             Margin = new Padding(4, 5, 4, 5);
-            Name = "index";
+            Name = "duplicate";
             Text = "Index";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
@@ -367,15 +300,10 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private TextBox centripetalInput;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private TextBox velocityInput;
-        private Label label13;
-        private TextBox accelerationInput;
-        private Label label14;
         private Button btnSubmit;
+        private Label label10;
+        private TextBox centripetalInput;
+        private Label label9;
+        private ComboBox comboBox1;
     }
 }

@@ -2,11 +2,11 @@ using CircularMotionBuslogic.Manager;
 
 namespace CircularMotionWinForms
 {
-    public partial class index : Form
+    public partial class duplicate : Form
     {
         public CentripetalForce _centripetalForce = new();
 
-        public index()
+        public duplicate()
         {
             InitializeComponent();
         }
@@ -23,8 +23,8 @@ namespace CircularMotionWinForms
             tangentialInput.Text = "";
             angularInput.Text = "";
             centripetalInput.Text = "";
-            velocityInput.Text = "";
-            accelerationInput.Text = "";
+            /*velocityInput.Text = "";
+            accelerationInput.Text = "";*/
 
         }
 
@@ -105,18 +105,18 @@ namespace CircularMotionWinForms
                 double _mass = double.Parse(massInput.Text);
                 double _tv = double.Parse(tangentialInput.Text);
 
-                accelerationInput.Text = (Math.Round(((_mass * Math.Pow(_tv, 2)) / _cf), 2)).ToString();
+                //accelerationInput.Text = (Math.Round(((_mass * Math.Pow(_tv, 2)) / _cf), 2)).ToString();
             }
             else if (tangentialInput.Text.Length > 0 && radiusInput.Text.Length > 0)
             {
                 double _r = double.Parse(radiusInput.Text);
                 double _tv = double.Parse(tangentialInput.Text);
 
-                accelerationInput.Text = (Math.Round((Math.Pow(_tv, 2) / _r), 2)).ToString();
+                //accelerationInput.Text = (Math.Round((Math.Pow(_tv, 2) / _r), 2)).ToString();
             }
             else
             {
-                accelerationInput.Text = "";
+                //accelerationInput.Text = "";
             }
         }
 
@@ -225,6 +225,11 @@ namespace CircularMotionWinForms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
