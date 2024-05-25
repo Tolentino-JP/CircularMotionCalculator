@@ -1,12 +1,13 @@
 using CircularMotionBuslogic.Manager;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CircularMotionWinForms
 {
-    public partial class duplicate : Form
+    public partial class Duplicate : Form
     {
         public CentripetalForce _centripetalForce = new();
 
-        public duplicate()
+        public Duplicate()
         {
             InitializeComponent();
         }
@@ -14,6 +15,10 @@ namespace CircularMotionWinForms
         private void Form1_Load(object sender, EventArgs e)
         {
             option.SelectedIndex = 0;
+            massLabel.SelectedIndex = 0;
+            radiusLabel.SelectedIndex = 0;
+            tangentialLabel.SelectedIndex = 0;
+            angularLabel.SelectedIndex = 0;
         }
 
         private void submitBtn_Click(object sender, EventArgs e)
@@ -43,6 +48,8 @@ namespace CircularMotionWinForms
             /*GetAcceleration();
             GetCentripetal();
             GetRadius();*/
+            MassError.SetError(massLabel, "");
+
         }
 
         private void tangentialInput_TextChanged(object sender, EventArgs e)
@@ -51,6 +58,8 @@ namespace CircularMotionWinForms
             GetAcceleration();
             GetCentripetal();
             GetRadius();*/
+            TangentialError.SetError(tangentialLabel, "");
+
         }
 
         private void radiusInput_TextChanged(object sender, EventArgs e)
@@ -59,6 +68,7 @@ namespace CircularMotionWinForms
             GetAcceleration();
             GetTangential();
             GetCentripetal();*/
+            RadiusError.SetError(radiusLabel, "");
         }
 
 
@@ -74,7 +84,7 @@ namespace CircularMotionWinForms
             if (e.KeyChar == '.')
             {
                 // If there's already a decimal point in the text, handle the event to ignore the input
-                if ((sender as TextBox).Text.Contains('.'))
+                if ((sender as System.Windows.Forms.TextBox).Text.Contains('.'))
                 {
                     e.Handled = true;
                 }
@@ -220,38 +230,23 @@ namespace CircularMotionWinForms
         private void angularInput_TextChanged(object sender, EventArgs e)
         {
             /*GetTangential();*/
+            AngularError.SetError(angularLabel, "");
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int status = 0;
-            if (string.IsNullOrEmpty(massInput.Text.Trim()))
-            {
-                MassError.SetError(massLabel, "Mass is Required");
-                status++;
-            }
-            if (string.IsNullOrEmpty(radiusInput.Text.Trim()))
-            {
-                RadiusError.SetError(radiusLabel, "Radius is Required");
-                status++;
-            }
-            if (string.IsNullOrEmpty(tangentialInput.Text.Trim()))
-            {
-                TangentialError.SetError(tangentialLabel, "Tangential Velocity is Required");
-                status++;
-            }
-            if (string.IsNullOrEmpty(angularInput.Text.Trim()))
-            {
-                AngularError.SetError(angularLabel, "Angular Velocity is Required");
-                status++;
-            }
+            int status1 = 5;
+            
+            status1 = GetError(status1);
 
-            if(status == 4)
+            
+
+            if(status1 >4)
             {
-                double mass = double.Parse(massInput.Text);
-                double tangential = double.Parse(tangentialInput.Text);
-                double angular = double.Parse(angularInput.Text);
-                double radius = double.Parse(radiusInput.Text);
+                double mass = MassUnit(massLabel.Text, double.Parse(massInput.Text));
+                double radius = RadiusUnit(radiusLabel.Text, )
+
+
                 switch (option.Text)
                 {
                     case "Centripetal Force":
@@ -263,11 +258,60 @@ namespace CircularMotionWinForms
                         break;
                 }
             }
-            
-            
-            
+
+        }
+        
+        private double Parsing(string given)
+        {
+            return double.Parse(given);
+        }
+
+        private int GetError(int status)
+        {
+            if (string.IsNullOrEmpty(massInput.Text.Trim()))
+            {
+                MassError.SetError(massLabel, "Mass is Required");
+                status--;
+            }
+            if (string.IsNullOrEmpty(radiusInput.Text.Trim()))
+            {
+                RadiusError.SetError(radiusLabel, "Radius is Required");
+                status--;
+            }
+            if (string.IsNullOrEmpty(tangentialInput.Text.Trim()))
+            {
+                TangentialError.SetError(tangentialLabel, "Tangential Velocity is Required");
+                status--;
+            }
+            if (string.IsNullOrEmpty(angularInput.Text.Trim()))
+            {
+                AngularError.SetError(angularLabel, "Angular Velocity is Required");
+                status--;
+            }
+
+            return status;
+        }
+
+        private double MassUnit(string mass, double given)
+        {
+            if(mass != "kg")
+            {
+                return given * ( 1 / 1000);
+            }
+            else
+            {
+                return given;
+            }
+        }
+
+        private double RadiusUnit()
+        {
+
+            if()
 
 
+
+            return 0;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
