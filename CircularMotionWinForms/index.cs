@@ -42,6 +42,7 @@ namespace CircularMotionWinForms
         {
             GetAcceleration();
             GetCentripetal();
+            GetRadius();
         }
 
         private void tangentialInput_TextChanged(object sender, EventArgs e)
@@ -49,6 +50,7 @@ namespace CircularMotionWinForms
             GetMass();
             GetAcceleration();
             GetCentripetal();
+            GetRadius();
         }
 
         private void radiusInput_TextChanged(object sender, EventArgs e)
@@ -88,10 +90,10 @@ namespace CircularMotionWinForms
                 double _tv = double.Parse(tangentialInput.Text);
                 massInput.Text = (Math.Round( ((_cf * _r) / Math.Pow(_tv, 2)), 2)).ToString();
             }
-            else
+            /*else
             {
                 massInput.Text = "";
-            }
+            }*/
         }
 
         private void GetAcceleration()
@@ -149,12 +151,26 @@ namespace CircularMotionWinForms
                 double _tangential = double.Parse(tangentialInput.Text);
                 double _radius = double.Parse(radiusInput.Text);
 
-                centripetalInput.Text = ((_mass * Math.Pow(_tangential, 2)) / _radius).ToString();
+                centripetalInput.Text = ( Math.Round(((_mass * Math.Pow(_tangential, 2)) / _radius), 2) ).ToString();
 
             }
             else
             {
                 centripetalInput.Text = "";
+            }
+
+        }
+
+        private void GetRadius()
+        {
+
+            if(massInput.Text.Length > 0 && tangentialInput.Text.Length > 0 && centripetalInput.Text.Length > 0)
+            {
+                double _mass = double.Parse(massInput.Text);
+                double _tv = double.Parse(tangentialInput.Text);
+                double _cf = double.Parse(centripetalInput.Text);
+                radiusInput.Text = (Math.Round(((_mass * Math.Pow(_tv, 2)) / _cf), 2)).ToString();
+
             }
 
         }
@@ -192,6 +208,8 @@ namespace CircularMotionWinForms
         private void centripetalInput_TextChanged(object sender, EventArgs e)
         {
             GetMass();
+            GetRadius();
+
         }
 
         private void accelerationInput_TextChanged(object sender, EventArgs e)
