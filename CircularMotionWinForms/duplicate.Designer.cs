@@ -28,41 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            components = new System.ComponentModel.Container();
             tangentialInput = new TextBox();
             massInput = new TextBox();
-            label2 = new Label();
             radiusInput = new TextBox();
-            label3 = new Label();
             submitBtn = new Button();
             angularInput = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            massLabel = new Label();
+            radiusLabel = new Label();
+            tangentialLabel = new Label();
+            angularLabel = new Label();
             btnSubmit = new Button();
             label10 = new Label();
-            centripetalInput = new TextBox();
+            answer = new TextBox();
             label9 = new Label();
-            comboBox1 = new ComboBox();
+            option = new ComboBox();
+            label11 = new Label();
+            label12 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            groupBox4 = new GroupBox();
+            MassError = new ErrorProvider(components);
+            TangentialError = new ErrorProvider(components);
+            RadiusError = new ErrorProvider(components);
+            AngularError = new ErrorProvider(components);
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MassError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TangentialError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RadiusError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AngularError).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Location = new Point(225, 191);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(157, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Tangential Velocity";
             // 
             // tangentialInput
             // 
             tangentialInput.Anchor = AnchorStyles.None;
-            tangentialInput.Location = new Point(226, 216);
+            tangentialInput.ForeColor = SystemColors.Desktop;
+            tangentialInput.Location = new Point(25, 44);
             tangentialInput.Margin = new Padding(4, 5, 4, 5);
             tangentialInput.Multiline = true;
             tangentialInput.Name = "tangentialInput";
@@ -74,7 +79,8 @@
             // massInput
             // 
             massInput.Anchor = AnchorStyles.None;
-            massInput.Location = new Point(225, 84);
+            massInput.ForeColor = SystemColors.Desktop;
+            massInput.Location = new Point(34, 40);
             massInput.Margin = new Padding(4, 5, 4, 5);
             massInput.Multiline = true;
             massInput.Name = "massInput";
@@ -83,21 +89,11 @@
             massInput.TextChanged += massInput_TextChanged;
             massInput.KeyPress += massInput_KeyPress;
             // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Location = new Point(224, 59);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 25);
-            label2.TabIndex = 2;
-            label2.Text = "Mass";
-            // 
             // radiusInput
             // 
             radiusInput.Anchor = AnchorStyles.None;
-            radiusInput.Location = new Point(225, 147);
+            radiusInput.ForeColor = SystemColors.Desktop;
+            radiusInput.Location = new Point(34, 45);
             radiusInput.Margin = new Padding(4, 5, 4, 5);
             radiusInput.Multiline = true;
             radiusInput.Name = "radiusInput";
@@ -106,21 +102,10 @@
             radiusInput.TextChanged += radiusInput_TextChanged;
             radiusInput.KeyPress += radiusInput_KeyPress;
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Location = new Point(224, 122);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 25);
-            label3.TabIndex = 4;
-            label3.Text = "Radius";
-            // 
             // submitBtn
             // 
             submitBtn.Anchor = AnchorStyles.None;
-            submitBtn.Location = new Point(349, 372);
+            submitBtn.Location = new Point(491, 502);
             submitBtn.Margin = new Padding(4, 5, 4, 5);
             submitBtn.Name = "submitBtn";
             submitBtn.Size = new Size(107, 38);
@@ -132,74 +117,64 @@
             // angularInput
             // 
             angularInput.Anchor = AnchorStyles.None;
-            angularInput.Location = new Point(226, 291);
+            angularInput.ForeColor = SystemColors.Desktop;
+            angularInput.Location = new Point(25, 45);
             angularInput.Margin = new Padding(4, 5, 4, 5);
             angularInput.Multiline = true;
             angularInput.Name = "angularInput";
-            angularInput.Size = new Size(227, 36);
+            angularInput.Size = new Size(223, 36);
             angularInput.TabIndex = 8;
             angularInput.TextChanged += angularInput_TextChanged;
             angularInput.KeyPress += angularInput_KeyPress;
             // 
-            // label4
+            // massLabel
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Location = new Point(225, 266);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(140, 25);
-            label4.TabIndex = 7;
-            label4.Text = "Angular Velocity";
+            massLabel.Anchor = AnchorStyles.None;
+            massLabel.AutoSize = true;
+            massLabel.Location = new Point(264, 45);
+            massLabel.Margin = new Padding(4, 0, 4, 0);
+            massLabel.Name = "massLabel";
+            massLabel.Size = new Size(42, 25);
+            massLabel.TabIndex = 9;
+            massLabel.Text = "(kg)";
             // 
-            // label5
+            // radiusLabel
             // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Location = new Point(455, 89);
-            label5.Margin = new Padding(4, 0, 4, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(42, 25);
-            label5.TabIndex = 9;
-            label5.Text = "(kg)";
+            radiusLabel.Anchor = AnchorStyles.None;
+            radiusLabel.AutoSize = true;
+            radiusLabel.Location = new Point(264, 50);
+            radiusLabel.Margin = new Padding(4, 0, 4, 0);
+            radiusLabel.Name = "radiusLabel";
+            radiusLabel.Size = new Size(38, 25);
+            radiusLabel.TabIndex = 10;
+            radiusLabel.Text = "(m)";
             // 
-            // label6
+            // tangentialLabel
             // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Location = new Point(455, 152);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 25);
-            label6.TabIndex = 10;
-            label6.Text = "(m)";
+            tangentialLabel.Anchor = AnchorStyles.None;
+            tangentialLabel.AutoSize = true;
+            tangentialLabel.Location = new Point(254, 49);
+            tangentialLabel.Margin = new Padding(4, 0, 4, 0);
+            tangentialLabel.Name = "tangentialLabel";
+            tangentialLabel.Size = new Size(53, 25);
+            tangentialLabel.TabIndex = 11;
+            tangentialLabel.Text = "(m/s)";
             // 
-            // label7
+            // angularLabel
             // 
-            label7.Anchor = AnchorStyles.None;
-            label7.AutoSize = true;
-            label7.Location = new Point(455, 221);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(53, 25);
-            label7.TabIndex = 11;
-            label7.Text = "(m/s)";
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Location = new Point(455, 296);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(63, 25);
-            label8.TabIndex = 12;
-            label8.Text = "(rad/s)";
+            angularLabel.Anchor = AnchorStyles.None;
+            angularLabel.AutoSize = true;
+            angularLabel.Location = new Point(250, 50);
+            angularLabel.Margin = new Padding(4, 0, 4, 0);
+            angularLabel.Name = "angularLabel";
+            angularLabel.Size = new Size(63, 25);
+            angularLabel.TabIndex = 12;
+            angularLabel.Text = "(rad/s)";
             // 
             // btnSubmit
             // 
             btnSubmit.Anchor = AnchorStyles.None;
-            btnSubmit.Location = new Point(234, 372);
+            btnSubmit.Location = new Point(376, 502);
             btnSubmit.Margin = new Padding(4, 5, 4, 5);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(107, 38);
@@ -212,98 +187,200 @@
             // 
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
-            label10.Location = new Point(592, 59);
+            label10.Location = new Point(167, 385);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new Size(145, 25);
+            label10.Size = new Size(68, 25);
             label10.TabIndex = 13;
-            label10.Text = "Centripetal Force";
+            label10.Text = "Option";
             // 
-            // centripetalInput
+            // answer
             // 
-            centripetalInput.Anchor = AnchorStyles.None;
-            centripetalInput.Location = new Point(594, 84);
-            centripetalInput.Margin = new Padding(4, 5, 4, 5);
-            centripetalInput.Multiline = true;
-            centripetalInput.Name = "centripetalInput";
-            centripetalInput.Size = new Size(227, 36);
-            centripetalInput.TabIndex = 14;
-            centripetalInput.TextChanged += centripetalInput_TextChanged;
-            centripetalInput.KeyPress += centripetalInput_KeyPress;
+            answer.Anchor = AnchorStyles.None;
+            answer.Location = new Point(484, 412);
+            answer.Margin = new Padding(4, 5, 4, 5);
+            answer.Multiline = true;
+            answer.Name = "answer";
+            answer.Size = new Size(300, 36);
+            answer.TabIndex = 14;
+            answer.TextChanged += centripetalInput_TextChanged;
+            answer.KeyPress += centripetalInput_KeyPress;
             // 
             // label9
             // 
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
-            label9.Location = new Point(824, 89);
+            label9.Location = new Point(792, 420);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(35, 25);
             label9.TabIndex = 15;
             label9.Text = "(N)";
             // 
-            // comboBox1
+            // option
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Centripetal Force", "Acceleration", "Linear Velocity" });
-            comboBox1.Location = new Point(592, 147);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(269, 33);
-            comboBox1.TabIndex = 23;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            option.Anchor = AnchorStyles.None;
+            option.DropDownStyle = ComboBoxStyle.DropDownList;
+            option.FormattingEnabled = true;
+            option.Items.AddRange(new object[] { "Centripetal Force", "Acceleration", "Linear Velocity" });
+            option.Location = new Point(170, 412);
+            option.Name = "option";
+            option.Size = new Size(300, 33);
+            option.TabIndex = 23;
+            option.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.Font = new Font("Showcard Gothic", 22F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = SystemColors.Highlight;
+            label11.Location = new Point(133, 32);
+            label11.Name = "label11";
+            label11.Size = new Size(781, 54);
+            label11.TabIndex = 24;
+            label11.Text = "KJK CIRCULAR MOTION CALCULATOR";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.Location = new Point(487, 382);
+            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(70, 25);
+            label12.TabIndex = 25;
+            label12.Text = "Answer";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.BackColor = SystemColors.ActiveCaption;
+            groupBox1.Controls.Add(massInput);
+            groupBox1.Controls.Add(massLabel);
+            groupBox1.Location = new Point(170, 116);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(328, 115);
+            groupBox1.TabIndex = 26;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Mass";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Anchor = AnchorStyles.None;
+            groupBox2.BackColor = SystemColors.ActiveCaption;
+            groupBox2.Controls.Add(radiusInput);
+            groupBox2.Controls.Add(radiusLabel);
+            groupBox2.Location = new Point(170, 240);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(328, 115);
+            groupBox2.TabIndex = 27;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Radius";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Anchor = AnchorStyles.None;
+            groupBox3.BackColor = SystemColors.ActiveCaption;
+            groupBox3.Controls.Add(tangentialLabel);
+            groupBox3.Controls.Add(tangentialInput);
+            groupBox3.Location = new Point(520, 116);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(328, 115);
+            groupBox3.TabIndex = 28;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Tangential Velocity";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Anchor = AnchorStyles.None;
+            groupBox4.BackColor = SystemColors.ActiveCaption;
+            groupBox4.Controls.Add(angularInput);
+            groupBox4.Controls.Add(angularLabel);
+            groupBox4.Location = new Point(520, 240);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(328, 115);
+            groupBox4.TabIndex = 29;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Angular Velocity";
+            // 
+            // MassError
+            // 
+            MassError.ContainerControl = this;
+            // 
+            // TangentialError
+            // 
+            TangentialError.ContainerControl = this;
+            // 
+            // RadiusError
+            // 
+            RadiusError.ContainerControl = this;
+            // 
+            // AngularError
+            // 
+            AngularError.ContainerControl = this;
             // 
             // duplicate
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1108, 568);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(1222, 656);
+            Controls.Add(groupBox4);
+            Controls.Add(groupBox3);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(option);
             Controls.Add(btnSubmit);
             Controls.Add(label9);
-            Controls.Add(centripetalInput);
+            Controls.Add(answer);
             Controls.Add(label10);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(angularInput);
-            Controls.Add(label4);
             Controls.Add(submitBtn);
-            Controls.Add(radiusInput);
-            Controls.Add(label3);
-            Controls.Add(massInput);
-            Controls.Add(label2);
-            Controls.Add(tangentialInput);
-            Controls.Add(label1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "duplicate";
-            Text = "Index";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MassError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TangentialError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RadiusError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AngularError).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
         private TextBox tangentialInput;
         private TextBox massInput;
-        private Label label2;
         private TextBox radiusInput;
-        private Label label3;
         private Button submitBtn;
         private TextBox angularInput;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label massLabel;
+        private Label radiusLabel;
+        private Label tangentialLabel;
+        private Label angularLabel;
         private Button btnSubmit;
         private Label label10;
-        private TextBox centripetalInput;
+        private TextBox answer;
         private Label label9;
-        private ComboBox comboBox1;
+        private ComboBox option;
+        private Label label11;
+        private Label label12;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private GroupBox groupBox3;
+        private GroupBox groupBox4;
+        private ErrorProvider MassError;
+        private ErrorProvider TangentialError;
+        private ErrorProvider RadiusError;
+        private ErrorProvider AngularError;
     }
 }
