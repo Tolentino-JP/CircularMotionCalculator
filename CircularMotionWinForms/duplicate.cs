@@ -28,8 +28,7 @@ namespace CircularMotionWinForms
             tangentialInput.Text = "";
             angularInput.Text = "";
             answer.Text = "";
-            /*velocityInput.Text = "";
-            accelerationInput.Text = "";*/
+            
 
         }
 
@@ -45,29 +44,22 @@ namespace CircularMotionWinForms
 
         private void massInput_TextChanged(object sender, EventArgs e)
         {
-            /*GetAcceleration();
-            GetCentripetal();
-            GetRadius();*/
+            
             MassError.SetError(massLabel, "");
 
         }
 
         private void tangentialInput_TextChanged(object sender, EventArgs e)
         {
-            /*GetMass();
-            GetAcceleration();
-            GetCentripetal();
-            GetRadius();*/
+            GetAngular();
             TangentialError.SetError(tangentialLabel, "");
 
         }
 
         private void radiusInput_TextChanged(object sender, EventArgs e)
         {
-            /*GetMass();
-            GetAcceleration();
             GetTangential();
-            GetCentripetal();*/
+            GetAngular();
             RadiusError.SetError(radiusLabel, "");
         }
 
@@ -106,44 +98,11 @@ namespace CircularMotionWinForms
             }*/
         }
 
-        private void GetAcceleration()
-        {
-
-            if (answer.Text.Length > 0 && massInput.Text.Length > 0 && tangentialInput.Text.Length > 0)
-            {
-                double _cf = double.Parse(answer.Text);
-                double _mass = double.Parse(massInput.Text);
-                double _tv = double.Parse(tangentialInput.Text);
-
-                //accelerationInput.Text = (Math.Round(((_mass * Math.Pow(_tv, 2)) / _cf), 2)).ToString();
-            }
-            else if (tangentialInput.Text.Length > 0 && radiusInput.Text.Length > 0)
-            {
-                double _r = double.Parse(radiusInput.Text);
-                double _tv = double.Parse(tangentialInput.Text);
-
-                //accelerationInput.Text = (Math.Round((Math.Pow(_tv, 2) / _r), 2)).ToString();
-            }
-            else
-            {
-                //accelerationInput.Text = "";
-            }
-        }
-
         private void GetTangential()
         {
-            if (massInput.Text.Length > 0 && radiusInput.Text.Length > 0 && answer.Text.Length > 0)
+            if(angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)
             {
-                double _mass = double.Parse(massInput.Text);
-                double _radius = double.Parse(radiusInput.Text);
-                double _centripetal = double.Parse(answer.Text);
-
-                tangentialInput.Text = (Math.Sqrt((_centripetal * _radius) / _mass)).ToString();
-            }
-            else if (angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)
-            {
-                tangentialInput.Text = (Math.Round(double.Parse(angularInput.Text) * double.Parse(radiusInput.Text), 2)).ToString();
-
+                tangentialInput.Text = (Parsing(angularInput.Text) * Parsing(radiusInput.Text)).ToString();
             }
             else
             {
@@ -183,6 +142,18 @@ namespace CircularMotionWinForms
 
             }
 
+        }
+
+        private void GetAngular()
+        {
+            if(tangentialInput.Text.Length > 0 && radiusInput.Text.Length > 0)
+            {
+                angularInput.Text = (Parsing(tangentialInput.Text)/Parsing(radiusInput.Text)).ToString();
+            }
+            else
+            {
+                angularInput.Text = "";
+            }
         }
 
         private void velocityInput_TextChanged(object sender, EventArgs e)
@@ -229,7 +200,7 @@ namespace CircularMotionWinForms
 
         private void angularInput_TextChanged(object sender, EventArgs e)
         {
-            /*GetTangential();*/
+            GetTangential();
             AngularError.SetError(angularLabel, "");
         }
 
@@ -243,8 +214,10 @@ namespace CircularMotionWinForms
 
             if(status1 >4)
             {
-                double mass = MassUnit(massLabel.Text, double.Parse(massInput.Text));
-                double radius = RadiusUnit(radiusLabel.Text, )
+                double mass = MassUnit(massLabel.Text, Parsing(massInput.Text));
+                double radius = RadiusUnit(radiusLabel.Text, Parsing(radiusInput.Text));
+                double tangential = TangentialUnit(tangentialLabel.Text, Parsing(tangentialInput.Text));
+                double angular = AngularUnit(angularLabel.Text, Parsing(angularInput.Text));
 
 
                 switch (option.Text)
@@ -261,6 +234,7 @@ namespace CircularMotionWinForms
 
         }
         
+        // parsing to double
         private double Parsing(string given)
         {
             return double.Parse(given);
@@ -296,7 +270,7 @@ namespace CircularMotionWinForms
         {
             if(mass != "kg")
             {
-                return given * ( 1 / 1000);
+                return Math.Round((given / 1000), 2);
             }
             else
             {
@@ -304,14 +278,62 @@ namespace CircularMotionWinForms
             }
         }
 
-        private double RadiusUnit()
+        private double RadiusUnit(string radius, double given)
         {
 
-            if()
+            if (radius != "m")
+            {
+                double answer = 0;
 
+                switch (radius)
+                {
+                    case "cm":
+                        answer = Math.Round((given / 100), 2);
+                        break;
+                    case "km":
+                        answer = Math.Round((given * 1000), 2);
+                        break;
+                    case "in":
+                        answer = Math.Round((given / 39.3701), 2);
+                        break;
+                }
+                return answer;
+            }
+            else
+            {
+                return given;
+            }
+            // end if statement
+        }
+        // end radius
 
+        private double TangentialUnit(string tangential, double given)
+        {
 
-            return 0;
+            if(tangential != "m/s")
+            {
+                return Math.Round((given/3.6), 2);
+            }
+            else
+            {
+                return given;
+            }
+            // end if statement 
+        }
+        // end tangential
+
+        private double AngularUnit(string angular, double given)
+        {
+
+            if(angular != "rad/s")
+            {
+                return Math.Round( (given / 9.5493), 2);
+            }
+            else
+            {
+                return given;
+            }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
