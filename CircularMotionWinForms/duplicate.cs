@@ -16,6 +16,7 @@ namespace CircularMotionWinForms
             InitializeComponent();
         }
 
+        // When the form is loaded the value of the combobox is start from the index zero
         private void Form1_Load(object sender, EventArgs e)
         {
             option.SelectedIndex = 0;
@@ -25,6 +26,7 @@ namespace CircularMotionWinForms
             angularLabel.SelectedIndex = 0;
         }
 
+        // When clear all button is clicked all the input textbox will clear
         private void submitBtn_Click(object sender, EventArgs e)
         {
             massInput.Text = "";
@@ -42,31 +44,24 @@ namespace CircularMotionWinForms
         private void radiusInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             NumberOnly(sender, e);
-
         }
 
         private void massInput_TextChanged(object sender, EventArgs e)
         {
-
             MassError.SetError(massLabel, "");
-
         }
 
         private void tangentialInput_TextChanged(object sender, EventArgs e)
         {
-            //GetAngular();
             TangentialError.SetError(tangentialLabel, "");
-
         }
 
         private void radiusInput_TextChanged(object sender, EventArgs e)
         {
-            //GetTangential();
-            //GetAngular();
             RadiusError.SetError(radiusLabel, "");
         }
 
-
+        // A function where accepts only number on a textbox
         private void NumberOnly(object sender, KeyPressEventArgs e)
         {
             // Allow only digits, the Backspace key, and one decimal point
@@ -86,15 +81,9 @@ namespace CircularMotionWinForms
             }
         }
 
-        private void velocityInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tangentialInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             NumberOnly(sender, e);
-
         }
 
         private void angularInput_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,22 +106,12 @@ namespace CircularMotionWinForms
             NumberOnly(sender, e);
         }
 
-        private void centripetalInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accelerationInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void angularInput_TextChanged(object sender, EventArgs e)
         {
-            //GetTangential();
             AngularError.SetError(angularLabel, "");
         }
 
+        // This function will solved what is on the option
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Mass _massUnit = new();
@@ -144,8 +123,11 @@ namespace CircularMotionWinForms
             Linear _linear = new();
 
             int status1 = 5;
+            // Check if there is an empty input and set an error message
             status1 = GetError(status1);
 
+
+            // if status is greater than 4 then there is no empty input 
             if (status1 > 4)
             {
                 _values.mass = _massUnit.Convert(massLabel.Text, Parsing(massInput.Text));
@@ -205,6 +187,7 @@ namespace CircularMotionWinForms
             return status;
         }
 
+        // Solved tangential value if there is angular and radius value to balance the value
         private void GetTangential()
         {
             if (angularInput.Text.Length > 0 && radiusInput.Text.Length > 0)

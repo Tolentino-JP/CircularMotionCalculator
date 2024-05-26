@@ -32,7 +32,7 @@
             tangentialInput = new TextBox();
             massInput = new TextBox();
             radiusInput = new TextBox();
-            submitBtn = new Button();
+            clearBtn = new Button();
             angularInput = new TextBox();
             btnSubmit = new Button();
             label10 = new Label();
@@ -107,18 +107,18 @@
             radiusInput.KeyPress += radiusInput_KeyPress;
             radiusInput.KeyUp += radiusInput_KeyUp;
             // 
-            // submitBtn
+            // clearBtn
             // 
-            submitBtn.Anchor = AnchorStyles.None;
-            submitBtn.Cursor = Cursors.Hand;
-            submitBtn.Location = new Point(532, 491);
-            submitBtn.Margin = new Padding(4, 5, 4, 5);
-            submitBtn.Name = "submitBtn";
-            submitBtn.Size = new Size(107, 38);
-            submitBtn.TabIndex = 6;
-            submitBtn.Text = "Clear All";
-            submitBtn.UseVisualStyleBackColor = true;
-            submitBtn.Click += submitBtn_Click;
+            clearBtn.Anchor = AnchorStyles.None;
+            clearBtn.Cursor = Cursors.Hand;
+            clearBtn.Location = new Point(532, 491);
+            clearBtn.Margin = new Padding(4, 5, 4, 5);
+            clearBtn.Name = "clearBtn";
+            clearBtn.Size = new Size(107, 38);
+            clearBtn.TabIndex = 6;
+            clearBtn.Text = "Clear All";
+            clearBtn.UseVisualStyleBackColor = true;
+            clearBtn.Click += submitBtn_Click;
             // 
             // angularInput
             // 
@@ -343,7 +343,7 @@
             Controls.Add(option);
             Controls.Add(btnSubmit);
             Controls.Add(label10);
-            Controls.Add(submitBtn);
+            Controls.Add(clearBtn);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Duplicate";
             WindowState = FormWindowState.Maximized;
@@ -368,7 +368,7 @@
         private TextBox tangentialInput;
         private TextBox massInput;
         private TextBox radiusInput;
-        private Button submitBtn;
+        private Button clearBtn;
         private TextBox angularInput;
         private Button btnSubmit;
         private Label label10;
