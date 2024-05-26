@@ -6,25 +6,17 @@ using System.Threading.Tasks;
 using CircularMotionModel.Model;
 
 
-namespace CircularMotionBuslogic.Manager
+namespace CircularMotionBuslogic.Manager.OptionCalculator
 {
     public class CentripetalForce
     {
 
-
         // computing centripetal force
         public double CentripetalForceCompute(Values _values)
         {
-
-            double answer = (_values.mass * Math.Pow(_values.tangentialVelocity, 2) ) / _values.radius;
-
-            return answer;
+            return Math.Round((_values.mass * Math.Pow(_values.tangentialVelocity, 2) / _values.radius), 2);
         }
 
-        public void Ewan()
-        {
-            Console.WriteLine("Main Conneted Wow Pakyu melan");
-        }
 
     }
 }

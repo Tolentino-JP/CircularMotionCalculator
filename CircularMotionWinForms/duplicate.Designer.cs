@@ -36,7 +36,6 @@
             angularInput = new TextBox();
             btnSubmit = new Button();
             label10 = new Label();
-            answer = new TextBox();
             option = new ComboBox();
             label11 = new Label();
             label12 = new Label();
@@ -53,6 +52,7 @@
             RadiusError = new ErrorProvider(components);
             AngularError = new ErrorProvider(components);
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            answer = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -66,6 +66,7 @@
             // tangentialInput
             // 
             tangentialInput.Anchor = AnchorStyles.None;
+            tangentialInput.Cursor = Cursors.IBeam;
             tangentialInput.ForeColor = SystemColors.Desktop;
             tangentialInput.Location = new Point(16, 44);
             tangentialInput.Margin = new Padding(4, 5, 4, 5);
@@ -75,10 +76,12 @@
             tangentialInput.TabIndex = 1;
             tangentialInput.TextChanged += tangentialInput_TextChanged;
             tangentialInput.KeyPress += tangentialInput_KeyPress;
+            tangentialInput.KeyUp += tangentialInput_KeyUp;
             // 
             // massInput
             // 
             massInput.Anchor = AnchorStyles.None;
+            massInput.Cursor = Cursors.IBeam;
             massInput.ForeColor = SystemColors.Desktop;
             massInput.Location = new Point(25, 40);
             massInput.Margin = new Padding(4, 5, 4, 5);
@@ -92,6 +95,7 @@
             // radiusInput
             // 
             radiusInput.Anchor = AnchorStyles.None;
+            radiusInput.Cursor = Cursors.IBeam;
             radiusInput.ForeColor = SystemColors.Desktop;
             radiusInput.Location = new Point(25, 45);
             radiusInput.Margin = new Padding(4, 5, 4, 5);
@@ -101,10 +105,12 @@
             radiusInput.TabIndex = 5;
             radiusInput.TextChanged += radiusInput_TextChanged;
             radiusInput.KeyPress += radiusInput_KeyPress;
+            radiusInput.KeyUp += radiusInput_KeyUp;
             // 
             // submitBtn
             // 
             submitBtn.Anchor = AnchorStyles.None;
+            submitBtn.Cursor = Cursors.Hand;
             submitBtn.Location = new Point(532, 491);
             submitBtn.Margin = new Padding(4, 5, 4, 5);
             submitBtn.Name = "submitBtn";
@@ -117,6 +123,7 @@
             // angularInput
             // 
             angularInput.Anchor = AnchorStyles.None;
+            angularInput.Cursor = Cursors.IBeam;
             angularInput.ForeColor = SystemColors.Desktop;
             angularInput.Location = new Point(16, 45);
             angularInput.Margin = new Padding(4, 5, 4, 5);
@@ -126,10 +133,12 @@
             angularInput.TabIndex = 8;
             angularInput.TextChanged += angularInput_TextChanged;
             angularInput.KeyPress += angularInput_KeyPress;
+            angularInput.KeyUp += angularInput_KeyUp;
             // 
             // btnSubmit
             // 
             btnSubmit.Anchor = AnchorStyles.None;
+            btnSubmit.Cursor = Cursors.Hand;
             btnSubmit.Location = new Point(413, 491);
             btnSubmit.Margin = new Padding(4, 5, 4, 5);
             btnSubmit.Name = "btnSubmit";
@@ -150,22 +159,13 @@
             label10.TabIndex = 13;
             label10.Text = "Option";
             // 
-            // answer
-            // 
-            answer.Anchor = AnchorStyles.None;
-            answer.Location = new Point(552, 412);
-            answer.Margin = new Padding(4, 5, 4, 5);
-            answer.Multiline = true;
-            answer.Name = "answer";
-            answer.Size = new Size(370, 36);
-            answer.TabIndex = 14;
-            answer.TextChanged += centripetalInput_TextChanged;
-            answer.KeyPress += centripetalInput_KeyPress;
-            // 
             // option
             // 
             option.Anchor = AnchorStyles.None;
+            option.BackColor = SystemColors.ActiveCaption;
+            option.Cursor = Cursors.Hand;
             option.DropDownStyle = ComboBoxStyle.DropDownList;
+            option.FlatStyle = FlatStyle.Flat;
             option.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             option.FormattingEnabled = true;
             option.Items.AddRange(new object[] { "Centripetal Force", "Acceleration", "Linear Velocity" });
@@ -214,6 +214,7 @@
             // massLabel
             // 
             massLabel.Anchor = AnchorStyles.None;
+            massLabel.Cursor = Cursors.Hand;
             massLabel.DropDownStyle = ComboBoxStyle.DropDownList;
             massLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             massLabel.FormattingEnabled = true;
@@ -239,6 +240,7 @@
             // radiusLabel
             // 
             radiusLabel.Anchor = AnchorStyles.None;
+            radiusLabel.Cursor = Cursors.Hand;
             radiusLabel.DropDownStyle = ComboBoxStyle.DropDownList;
             radiusLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             radiusLabel.FormattingEnabled = true;
@@ -264,6 +266,7 @@
             // tangentialLabel
             // 
             tangentialLabel.Anchor = AnchorStyles.None;
+            tangentialLabel.Cursor = Cursors.Hand;
             tangentialLabel.DropDownStyle = ComboBoxStyle.DropDownList;
             tangentialLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             tangentialLabel.FormattingEnabled = true;
@@ -289,6 +292,7 @@
             // angularLabel
             // 
             angularLabel.Anchor = AnchorStyles.None;
+            angularLabel.Cursor = Cursors.Hand;
             angularLabel.DropDownStyle = ComboBoxStyle.DropDownList;
             angularLabel.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             angularLabel.FormattingEnabled = true;
@@ -314,11 +318,22 @@
             // 
             AngularError.ContainerControl = this;
             // 
+            // answer
+            // 
+            answer.Anchor = AnchorStyles.None;
+            answer.BackColor = SystemColors.ActiveCaption;
+            answer.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            answer.Location = new Point(552, 412);
+            answer.Name = "answer";
+            answer.Size = new Size(370, 36);
+            answer.TabIndex = 30;
+            // 
             // Duplicate
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1222, 656);
+            Controls.Add(answer);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -327,7 +342,6 @@
             Controls.Add(label11);
             Controls.Add(option);
             Controls.Add(btnSubmit);
-            Controls.Add(answer);
             Controls.Add(label10);
             Controls.Add(submitBtn);
             Margin = new Padding(4, 5, 4, 5);
@@ -358,7 +372,6 @@
         private TextBox angularInput;
         private Button btnSubmit;
         private Label label10;
-        private TextBox answer;
         private ComboBox option;
         private Label label11;
         private Label label12;
@@ -375,5 +388,6 @@
         private ComboBox radiusLabel;
         private ComboBox tangentialLabel;
         private ComboBox angularLabel;
+        private Label answer;
     }
 }
