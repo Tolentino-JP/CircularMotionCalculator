@@ -141,13 +141,13 @@ namespace CircularMotionWinForms
                 switch (option.Text)
                 {
                     case "Centripetal Force":
-                        answer.Text = _centripetal.CentripetalForceCompute(_values).ToString();
+                        answer.Text = _centripetal.CentripetalForceCompute(_values).ToString() + "  N";
                         break;
                     case "Acceleration":
-                        answer.Text = _acceleration.AccelerationCompute(_values).ToString();
+                        answer.Text = _acceleration.AccelerationCompute(_values).ToString() + "  m/s"+ "\u00B2";
                         break;
                     case "Linear Velocity":
-                        answer.Text = _linear.LinearCompute(_values).ToString();
+                        answer.Text = _linear.LinearCompute(_values).ToString() + "  m/s";
                         break;
                 }
             }
