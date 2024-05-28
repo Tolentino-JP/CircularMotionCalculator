@@ -7,11 +7,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CircularMotionWinForms
 {
-    public partial class Duplicate : Form
+    public partial class Home : Form
     {
         Values _values = new Values();
 
-        public Duplicate()
+        public Home()
         {
             InitializeComponent();
         }

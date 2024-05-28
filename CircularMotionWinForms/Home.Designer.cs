@@ -1,6 +1,6 @@
 ﻿namespace CircularMotionWinForms
 {
-    partial class Duplicate
+    partial class Home
     {
         /// <summary>
         ///  Required designer variable.
