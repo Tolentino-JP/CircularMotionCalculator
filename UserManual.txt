@@ -2,7 +2,9 @@ USER MANUAL
 
 INSTALLATION
 
-1. Install Visual Studio (Note! The icon should be color Violet not the blue).
+1. Install Visual Studio (Note! The icon should be color Violet not the blue). 
+   https://visualstudio.microsoft.com/vs/ 
+   select Community 2022.
 2. Ensure you install the necessary frameworks, specifically Net 7.0 on Visual Studio Installer.
 3. Extract the zip file and open the folder and select "CircularMotionCalculator.sln" file.
 4. In the solution explorer, locate CircularMotionWinForms.
