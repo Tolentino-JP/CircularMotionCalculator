@@ -1,22 +1,29 @@
 USER MANUAL
 
 INSTALLATION
-
 1. Install Visual Studio (Note! The icon should be color Violet not the blue). 
    https://visualstudio.microsoft.com/vs/ 
    select Community 2022.
+
 2. Ensure you install the necessary frameworks, specifically Net 7.0 on Visual Studio Installer.
+
 3. Extract the zip file and open the folder and select "CircularMotionCalculator.sln" file.
+
 4. In the solution explorer, locate CircularMotionWinForms.
+
 5. Then, select Home.cs and wait for the designer to load.
+
 6. Beneath the navigation bar, you'll find a run/play button . It's labeled 'CircularMotionWinForms'. Simply click this button, 
    and the calculator will launch.
 
+
 USAGE
-
-
 1. The calculator features 4 input fields for users to enter parameters. All input fields must have a value entered.
+
 2. Users also have the option to adjust the unit for each value.
+
 3. After inputting the values, users can select the calculation type: centripetal force, acceleration, or linear velocity.
+
 4. Click the 'calculate' button, and the answer will be displayed automatically.
+
 5. To start another computation, simply press the 'clear all' button.
