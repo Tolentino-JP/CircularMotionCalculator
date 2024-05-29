@@ -9,7 +9,7 @@ namespace CircularMotionBuslogic.Manager.OptionCalculator
 {
     public class Linear
     {
-
+        // Computing Linear Velocity
         public double LinearCompute(Values _values)
         {
             return _values.tangentialVelocity;

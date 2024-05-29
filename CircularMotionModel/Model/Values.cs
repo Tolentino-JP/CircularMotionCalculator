@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace CircularMotionModel.Model
 {
+
+    // Store all the inputs from the user
     public class Values
     {
 

@@ -9,7 +9,7 @@ namespace CircularMotionBuslogic.Manager.OptionCalculator
 {
     public class Acceleration
     {
-
+        // Computing Acceleration
         public double AccelerationCompute(Values _values)
         {
             return Math.Round((Math.Pow(_values.tangentialVelocity, 2) / _values.radius), 2);
